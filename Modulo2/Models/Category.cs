@@ -1,3 +1,5 @@
+using System;
+
 namespace Modulo2.Models
 {
     public class Category

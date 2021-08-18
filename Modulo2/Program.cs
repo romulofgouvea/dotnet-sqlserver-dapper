@@ -1,4 +1,8 @@
-﻿using System;
+﻿using System.Reflection;
+using System;
+using System.Data.SqlClient;
+using Modulo2.Models;
+using Dapper;
 
 namespace Modulo2
 {
@@ -19,13 +23,6 @@ namespace Modulo2
             }
         }
 
-            var categories = connection.Query<Category>("SELECT [Id], [Title] FROM [Category]");
-            foreach (var item in categories)
-            {
-                Console.WriteLine($"{item.Id} - {item.Title}");
-            }
-        }
-
         static void GetCategory(SqlConnection connection)
         {
             var category = connection
@@ -36,7 +33,6 @@ namespace Modulo2
                         id = "af3407aa-11ae-4621-a2ef-2028b85507c4"
                     });
             Console.WriteLine($"{category.Id} - {category.Title}");
-
         }
 
         static void CreateCategory(SqlConnection connection)
