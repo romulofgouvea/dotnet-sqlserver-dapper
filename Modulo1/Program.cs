@@ -9,7 +9,7 @@ namespace Modulo1
         {
             Console.WriteLine("Main");
             
-            const string connectionString = "Server=localhost,1433;Database=balta;User ID=sa;Password=1q2w3e4r@#$";
+            const string connectionString = "Server=localhost,1433;Database=dapper;User ID=sa;Password=1q2w3e4r@#$";
 
             using (var connection = new SqlConnection(connectionString))
             {
