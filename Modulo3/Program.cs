@@ -1,8 +1,7 @@
-﻿using System.Security.AccessControl;
+﻿using Dapper;
 using System;
 using System.Data;
 using System.Data.SqlClient;
-using Dapper;
 
 namespace Modulo3
 {

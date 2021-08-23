@@ -1,8 +1,7 @@
-﻿using System.Reflection;
+﻿using Dapper;
+using Modulo2.Models;
 using System;
 using System.Data.SqlClient;
-using Modulo2.Models;
-using Dapper;
 
 namespace Modulo2
 {

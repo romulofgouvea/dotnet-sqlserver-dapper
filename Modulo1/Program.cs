@@ -8,7 +8,7 @@ namespace Modulo1
         static void Main(string[] args)
         {
             Console.WriteLine("Módulo 1 - Introdução");
-            
+
             const string connectionString = "Server=localhost,1433;Database=dapper;User ID=sa;Password=1q2w3e4r@#$";
 
             using (var connection = new SqlConnection(connectionString))
