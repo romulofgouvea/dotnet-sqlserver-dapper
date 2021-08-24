@@ -35,7 +35,7 @@ namespace Modulo4.Repositories
                 if (usr == null)
                 {
                     usr = user;
-                    usr.Roles.Add(role);
+                    usr.AddRole(role);
                     users.Add(usr);
                 }
                 else

@@ -17,5 +17,13 @@ namespace Modulo4.Models
 
         [Write(false)]
         public List<Role> Roles { get; set; }
+
+        public void AddRole(Role role)
+        {
+            if (role != null)
+            {
+                Roles.Add(role);
+            }
+        }
     }
 }
