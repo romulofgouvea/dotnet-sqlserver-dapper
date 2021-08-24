@@ -18,22 +18,16 @@ namespace Modulo4
 
             using var connection = new SqlConnection(CONNECTION_STRING);
 
-            var repository = new UserRepository(connection);
-            repository.GetAll()
+            var userRepository = new Repository<User>(connection);
+            userRepository.GetAll()
                 .ToList()
                 .ForEach(user => Console.WriteLine(user.Name));
 
-            // repository.Get(1);
-            //var user = new User
-            //{
-            //    Bio = "a",
-            //    Email = "a@a.com",
-            //    Image = "https://",
-            //    Name = "Aaa",
-            //    PasswordHash = "Pass",
-            //    Slug = "sluga"
-            //};
-            //InsertUser(connection, user);
+
+            var roleRepository = new Repository<Role>(connection);
+            roleRepository.GetAll()
+                .ToList()
+                .ForEach(role => Console.WriteLine(role.Name));
         }
     }
 }

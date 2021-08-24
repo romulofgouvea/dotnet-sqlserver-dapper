@@ -3,9 +3,8 @@ using Dapper.Contrib.Extensions;
 namespace Modulo4.Models
 {
     [Table("[User]")]
-    public class User
+    public class User : BaseModel
     {
-        public int Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
         public string PasswordHash { get; set; }
