@@ -15,7 +15,7 @@ namespace Modulo4.Repositories
         }
 
         public TModel Get(int id) => _connection.Get<TModel>(id);
-        public IEnumerable<TModel> GetAll() => _connection.GetAll<TModel>();
+        public virtual IEnumerable<TModel> GetAll() => _connection.GetAll<TModel>();
         public void Create(TModel tModel)
         {
             tModel.Id = 0;

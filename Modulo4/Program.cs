@@ -18,16 +18,19 @@ namespace Modulo4
 
             using var connection = new SqlConnection(CONNECTION_STRING);
 
-            var userRepository = new Repository<User>(connection);
-            userRepository.GetAll()
-                .ToList()
-                .ForEach(user => Console.WriteLine(user.Name));
-
-
             var roleRepository = new Repository<Role>(connection);
             roleRepository.GetAll()
                 .ToList()
                 .ForEach(role => Console.WriteLine(role.Name));
+
+            var userRepository = new UserRepository(connection);
+            userRepository.GetAll()
+                .ToList()
+                .ForEach(user =>
+                {
+                    Console.WriteLine($"User: {user.Name} - {user.Roles.Count()}");
+                    user.Roles.ToList().ForEach(role => Console.WriteLine($" - {role.Name}"));
+                });
         }
     }
 }
