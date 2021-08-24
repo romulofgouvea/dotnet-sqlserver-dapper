@@ -18,19 +18,36 @@ namespace Modulo4
 
             using var connection = new SqlConnection(CONNECTION_STRING);
 
-            var roleRepository = new Repository<Role>(connection);
-            roleRepository.GetAll()
-                .ToList()
-                .ForEach(role => Console.WriteLine(role.Name));
+            Load();
 
-            var userRepository = new UserRepository(connection);
-            userRepository.GetAll()
-                .ToList()
-                .ForEach(user =>
-                {
-                    Console.WriteLine($"User: {user.Name} - {user.Roles.Count()}");
-                    user.Roles.ToList().ForEach(role => Console.WriteLine($" - {role.Name}"));
-                });
+            Console.ReadKey();
         }
+
+        private static void Load()
+        {
+            Console.Clear();
+            Console.WriteLine("Meu Blog");
+            Console.WriteLine("-----------------");
+            Console.WriteLine("O que deseja fazer?\n");
+            
+            Console.WriteLine("1 - Gestão de usuário");
+            Console.WriteLine("2 - Gestão de perfil");
+            Console.WriteLine("3 - Gestão de categoria");
+            Console.WriteLine("4 - Gestão de tag");
+            Console.WriteLine("5 - Vincular perfil/usuário");
+            Console.WriteLine("6 - Vincular post/tag");
+            Console.WriteLine("7 - Relatórios\n\n");
+            
+            var option = short.Parse(Console.ReadLine()!);
+
+            switch (option)
+            {
+                case 4:
+                    MenuTagScreen.Load();
+                    break;
+                default: Load(); break;
+            }
+        }
+
     }
 }
